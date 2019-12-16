@@ -1,0 +1,56 @@
+package ${packagePath}.${package}${service}.${packageName}.${service}.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
+import java.util.List;
+import java.util.Map;
+
+import ${packagePath}.${package}${domain}.${packageName}.${className}DO;
+import ${packagePath}.${package}${dao}.${packageName}.${className}Dao;
+import ${packagePath}.${package}${service}.${packageName}.${className}Service;
+
+
+
+@Service
+public class ${className}ServiceImpl extends ServiceImpl<${className}Dao, ${className}DO> implements ${className}Service {
+	@Autowired
+	private ${className}Dao ${className}dao;
+	
+	@Override
+	public ${className}DO get(${pk.attrType} ${pk.attrname}){
+		return ${className}dao.get(${pk.attrname});
+	}
+	
+	@Override
+	public List<${className}DO> list(Map<String, Object> map){
+		return ${className}dao.list(map);
+	}
+	
+	@Override
+	public int count(Map<String, Object> map){
+		return ${className}dao.count(map);
+	}
+	
+	@Override
+	public int save(${className}DO ${className}){
+		return ${className}dao.save(${className});
+	}
+	
+	@Override
+	public int update(${className}DO ${className}){
+		return ${className}dao.update(${className});
+	}
+	
+	@Override
+	public int remove(${pk.attrType} ${pk.attrname}){
+		return ${className}dao.remove(${pk.attrname});
+	}
+	
+	@Override
+	public int batchRemove(${pk.attrType}[] ${pk.attrname}s){
+		return ${className}dao.batchRemove(${pk.attrname}s);
+	}
+	
+}

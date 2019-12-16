@@ -1,0 +1,32 @@
+package ${packagePath}.${package}${domain}.${packageName};
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@TableName("${tableName}")
+public class ${className}DO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    #foreach ($column in $columns)
+	/*
+	*$column.comments
+	*/
+	private $column.attrType $column.attrname;
+    #end
+}

@@ -1,0 +1,54 @@
+package  ${packagePath}.${package}${business}.${packageName}.impl;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+
+import ${packagePath}.${package}${domain}.${packageName}.${className}DO;
+import ${packagePath}.${package}${service}.${packageName}.${className}Service;
+import ${packagePath}.${package}${business}.${packageName}.${className}Business;
+
+@Service
+public class ${className}businessImpl implements ${className}business {
+	@Autowired
+	private ${className}Service ${className}service;
+	
+	@Override
+	public ${className}DO get(${pk.attrType} ${pk.attrname}){
+		return ${className}service.get(${pk.attrname});
+	}
+	
+	@Override
+	public List<${className}DO> list(Map<String, Object> map){
+		return ${className}Service.list(map);
+	}
+	
+	@Override
+	public int count(Map<String, Object> map){
+		return ${className}Service.count(map);
+	}
+	
+	@Override
+	public int save(${className}DO ${className}){
+		return ${className}Service.save(${className});
+	}
+	
+	@Override
+	public int update(${className}DO ${className}){
+		return ${className}Service.update(${className});
+	}
+	
+	@Override
+	public int remove(${pk.attrType} ${pk.attrname}){
+		return ${className}Service.remove(${pk.attrname});
+	}
+	
+	@Override
+	public int batchRemove(${pk.attrType}[] ${pk.attrname}s){
+		return ${className}Service.batchRemove(${pk.attrname}s);
+	}
+	
+}

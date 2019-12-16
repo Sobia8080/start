@@ -1,0 +1,30 @@
+package ${packagePath}.${package}${business}.${packageName};
+
+import ${packagePath}.${package}${domain}.${packageName}.${className}DO;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * ${comments}
+ * 
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+public interface ${className}business {
+	
+	${className}DO get(${pk.attrType} ${pk.attrname});
+	
+	List<${className}DO> list(Map<String, Object> map);
+	
+	int count(Map<String, Object> map);
+	
+	int save(${className}DO ${className});
+	
+	int update(${className}DO ${className});
+	
+	int remove(${pk.attrType} ${pk.attrname});
+	
+	int batchRemove(${pk.attrType}[] ${pk.attrname}s);
+}
